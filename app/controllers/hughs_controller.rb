@@ -1,0 +1,2 @@
+class HughsController < ApplicationController
+end

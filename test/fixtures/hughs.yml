@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spark_id: MyString
+  spark_api_token: MyString
+  color: MyString
+  brightness: 1
+
+two:
+  spark_id: MyString
+  spark_api_token: MyString
+  color: MyString
+  brightness: 1
