@@ -16,6 +16,7 @@ gem 'spring',    group: :development
 gem 'active_model_serializers'
 gem 'rails-observers'
 gem 'faraday'
+gem 'em-eventsource'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
