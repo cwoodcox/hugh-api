@@ -25,4 +25,5 @@ gem 'active_model_serializers'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'pry-byebug'
 
