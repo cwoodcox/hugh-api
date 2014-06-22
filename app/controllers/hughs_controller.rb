@@ -17,7 +17,7 @@ class HughsController < ApplicationController
       hugh.update update_params
       respond_with hugh
     else
-      render json: { errors: "Unauthorized"},  status: :unauthorized
+      render json: { errors: "Unauthorized"}, status: :unauthorized
     end
   end
 
