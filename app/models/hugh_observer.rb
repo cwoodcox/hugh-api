@@ -4,8 +4,8 @@
 # exceptions to normal flow in that object/service.
 #
 # Normally, I'd want to take all the logic that calculates the URLs and the
-# posted data and drop it in its own class as well, but for the sake of brevity
-# it remains here.
+# posted data and drop it in its own class as well (probably the same class used
+# for the background processing), but for the sake of brevity it remains here.
 
 class HughObserver < ActiveRecord::Observer
   def after_save record
