@@ -1,3 +1,3 @@
 class HughSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :color, :brightness
 end
