@@ -7,14 +7,19 @@ module Wink
 
       def call env
         wink = Faraday.new url: "https://winkapi.quirky.com/" do |conn|
-          conn.request :authorization, :token, env['HTTP_AUTHORIZATION'].split.last
+          conn.request :authorization, "Bearer", env['HTTP_AUTHORIZATION'].split.last
           conn.adapter Faraday.default_adapter
         end
 
-        response = JSON.parse wink.get('/users/me').body
-        env['auth.wink.user_id'] = response['data']['user_id']
+        response = wink.get('/users/me')
+        if response.success?
+          user = JSON.parse response.body
+          env['auth.wink.user_id'] = user['data']['user_id']
 
-        @app.call env
+          @app.call env
+        else
+          [ 401, {}, "" ]
+        end
       end
     end
   end
