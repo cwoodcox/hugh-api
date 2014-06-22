@@ -10,4 +10,13 @@ class HughsControllerTest < ActionController::TestCase
     assert_response 201
   end
 
+  test "update a Hugh" do
+    put :update, { id: hughs(:one).id, color: "deadbe", brightness: 75 }
+    assert_response 204
+  end
+
+  test "delete a Hugh" do
+    delete :destroy, { id: hughs(:two).id }
+    assert_response 204
+  end
 end
