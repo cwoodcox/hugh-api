@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0',      group: :doc
 gem 'spring',    group: :development
 
 gem 'active_model_serializers'
+gem 'rails-observers'
 gem 'faraday'
 
 # Use ActiveModel has_secure_password
