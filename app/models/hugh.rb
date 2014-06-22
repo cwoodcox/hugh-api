@@ -7,7 +7,8 @@ class Hugh < ActiveRecord::Base
   end
 
   def spark_color_string
-    red, green, blue = [ color[0..1], color[2..3], color[4..5] ]
-    "#{red},#{green},#{blue},#{brightness}"
+    [ color[0..1], color[2..3], color[4..5] ].reduce("") do |rgb, hex|
+      rgb += hex.to_i(16) + ","
+    end + ",#{brightness}"
   end
 end
