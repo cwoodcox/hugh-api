@@ -12,7 +12,7 @@ namespace :hugh do
         source.on 'state' do |message|
           color = message['data'].split(',')[0..2].reduce("") { |hex, int| hex + int.to_i.to_s(16).rjust(2, "0") }
           brightness = message['data'].split(',')[3]
-          Hugh.where(spark_core_id: message['coreid']).update_all(color: color, brightness: brightness
+          Hugh.where(spark_core_id: message['coreid']).update_all(color: color, brightness: brightness)
         end
 
         source.start
