@@ -1,6 +1,11 @@
 class HughsController < ApplicationController
   respond_to :json
 
+  def show
+    hugh = Hugh.find params[:id]
+    respond_with hugh, root: false
+  end
+
   def create
     hugh = Hugh.new create_params
     if hugh.valid?
