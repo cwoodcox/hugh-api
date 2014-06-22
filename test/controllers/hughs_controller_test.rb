@@ -3,6 +3,7 @@ require 'test_helper'
 class HughsControllerTest < ActionController::TestCase
   setup do
     @request.headers["Accept"] = 'application/json'
+    @request.env['auth.wink.user_id'] = "12213"
   end
 
   test "create a Hugh" do
@@ -13,6 +14,11 @@ class HughsControllerTest < ActionController::TestCase
   test "update a Hugh" do
     put :update, { id: hughs(:one).id, color: "deadbe", brightness: 75 }
     assert_response 204
+  end
+
+  test "update someone else's Hugh" do
+    put :update, { id: hughs(:two).id, color: "fed555", brightness: 50 }
+    assert_response 401
   end
 
   test "delete a Hugh" do

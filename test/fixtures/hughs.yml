@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  spark_core_id: MyString
-  spark_api_access_token: MyString
-  color: MyString
-  brightness: 1
+  spark_core_id: def123994828939238478
+  spark_api_access_token: xQ9RZFCzPPwjS2JWUX5Uuh7FxFgCYMOwVPUjuaRzgfd
+  color: 00FF00
+  brightness: 100
+  wink_user_id: 12213
 
 two:
-  spark_core_id: MyString
-  spark_api_access_token: MyString
-  color: MyString
-  brightness: 1
+  spark_core_id: ghi123994828939238478
+  spark_api_access_token: ZFCzPPwjS2JWUX5Uuh7FxFgCYMOwVPUjuaRzgfdsseF
+  color: FF0000
+  brightness: 100
+  wink_user_id: 12214
