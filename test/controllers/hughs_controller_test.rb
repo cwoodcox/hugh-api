@@ -25,7 +25,12 @@ class HughsControllerTest < ActionController::TestCase
   end
 
   test "delete a Hugh" do
-    delete :destroy, { id: hughs(:two).id }
+    delete :destroy, { id: hughs(:one).id }
     assert_response 204
+  end
+
+  test "delete someone else's Hugh" do
+    delete :destroy, { id: hughs(:two).id }
+    assert_response 401
   end
 end

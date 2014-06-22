@@ -23,8 +23,12 @@ class HughsController < ApplicationController
 
   def destroy
     hugh = Hugh.find params[:id]
-    hugh.destroy
-    respond_with hugh
+    if hugh.wink_user_id == current_wink_user_id
+      hugh.destroy
+      respond_with hugh
+    else
+      render json: { errors: "Unauthorized"}, status: :unauthorized
+    end
   end
 
   private
